@@ -1,0 +1,43 @@
+$white: #F5F5F5;
+$light-blue: #EBFFFB;
+$black: #303633;
+$yellow: #FFC857;
+$blue: #3F84E5;
+$red: #FF6663;
+$headerFont: "Single Day", sans-serif;
+$bodyFont: "Work Sans", sans-serif;
+
+:root {
+    color: $black;
+    font-size: 14px;
+  }
+  
+  .App {
+    font-family: $bodyFont;
+    padding: 0 1em;
+  }
+
+  .App {
+    font-family: $bodyFont;
+    padding: 0 1em;
+  }
+  
+  .App-header {
+    font-family: $headerFont;
+    min-height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: $black;
+    padding: 0 1em 0 1em;
+  }
+  
+  .App-link {
+    color: $blue;
+  }
+  
+  .main-container {
+    margin: auto;
+  }
