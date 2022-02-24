@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useAutocomplete } from '@mui/base/AutocompleteUnstyled';
 import CheckIcon from '@mui/icons-material/Check';
+
 import { actorList } from '../data/actors';
 
 import { Label } from './shared/Label';
@@ -22,20 +23,20 @@ export function ActorSearch() {
     focused,
     setAnchorEl,
   } = useAutocomplete({
-    id: 'customized-hook-demo',
+    id: 'actor-search',
     defaultValue: [],
     multiple: true,
     options: actorList,
-    getOptionLabel: (option) => option.title,
+    getOptionLabel: (option) => option.name,
   });
 
   return (
     <RootWrapper>
       <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}>Customized hook</Label>
+        <Label {...getInputLabelProps()}>Actor(s)</Label>
         <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
           {value.map((option, index) => (
-            <StyledTag label={option.title} {...getTagProps({ index })} />
+            <StyledTag label={option.name} {...getTagProps({ index })} />
           ))}
 
           <input {...getInputProps()} />
@@ -45,7 +46,7 @@ export function ActorSearch() {
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => (
             <li {...getOptionProps({ option, index })}>
-              <span>{option.title}</span>
+              <span>{option.name}</span>
               <CheckIcon fontSize="small" />
             </li>
           ))}
