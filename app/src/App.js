@@ -1,4 +1,6 @@
 import './App.scss';
+import { ActorSearch } from './components/ActorSearch';
+import Button from '@mui/material/Button';
 
 const title = 'Actorly Davis';
 
@@ -14,7 +16,12 @@ function App() {
           <li>Step 1: Search for actors</li>
           <li>Step 2: That's it.</li>
         </ul>
-        <form />
+        <form>
+          <ActorSearch />
+          <Button type="submit" variant="contained" color="primary">
+            Actorize
+          </Button>
+        </form>
       </main>
     </div>
   );
