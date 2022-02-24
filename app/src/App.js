@@ -1,4 +1,5 @@
 import './App.scss';
+import { ActorSearch } from './components/ActorSearch';
 
 const title = 'Actorly Davis';
 
@@ -14,7 +15,9 @@ function App() {
           <li>Step 1: Search for actors</li>
           <li>Step 2: That's it.</li>
         </ul>
-        <form />
+        <form>
+          <ActorSearch />
+        </form>
       </main>
     </div>
   );
