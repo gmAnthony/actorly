@@ -5,8 +5,10 @@ import { ActorSearch2 } from './components/ActorSearch2';
 import { ActorGraph } from './components/ActorGraph';
 import Button from '@mui/material/Button';
 
-const title = 'Actorly Davis';
 
+const title = 'Actorly Davis';
+const API_KEY = process.env.REACT_APP_API_KEY_V3;
+console.log(API_KEY)
 const N = 300;
 const gData = {
   nodes: [...Array(N).keys()].map(i => ({ id: i })),
@@ -17,7 +19,7 @@ const gData = {
       target: Math.round(Math.random() * (id-1))
     }))
   }
-
+  
 function App() {
   const inputEl = useRef(null);
 
