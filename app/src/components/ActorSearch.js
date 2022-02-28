@@ -10,7 +10,8 @@ import { RootWrapper } from './shared/RootWrapper';
 import { StyledTag } from './shared/StyledTag';
 import { Listbox } from './shared/Listbox';
 
-export function ActorSearch() {
+
+export function ActorSearch({ inputValue }) {
   const {
     getRootProps,
     getInputLabelProps,
@@ -39,7 +40,7 @@ export function ActorSearch() {
             <StyledTag label={option.name} {...getTagProps({ index })} />
           ))}
 
-          <input {...getInputProps()} />
+          <input {...getInputProps()} ref={inputValue} />
         </InputWrapper>
       </div>
       {groupedOptions.length > 0 ? (

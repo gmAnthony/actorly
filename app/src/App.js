@@ -1,9 +1,12 @@
 import './App.scss';
-import { ActorSearch } from './components/ActorSearch';
+import { useRef } from 'react';
+// import { ActorSearch } from './components/ActorSearch';
+import { ActorSearch2 } from './components/ActorSearch2';
 import { ActorGraph } from './components/ActorGraph';
 import Button from '@mui/material/Button';
 
 const title = 'Actorly Davis';
+
 const N = 300;
 const gData = {
   nodes: [...Array(N).keys()].map(i => ({ id: i })),
@@ -16,6 +19,8 @@ const gData = {
   }
 
 function App() {
+  const inputEl = useRef(null);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +33,8 @@ function App() {
           <li>Step 2: That's it.</li>
         </ul>
         <form>
-          <ActorSearch />
+          {/* <ActorSearch inputValue={inputEl}/> */}
+          <ActorSearch2 inputValue={inputEl}/>
           <Button type="submit" variant="contained" color="primary">
             Actorize
           </Button>
