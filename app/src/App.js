@@ -1,5 +1,5 @@
 import './App.scss';
-import { useRef } from 'react';
+import { useState } from 'react';
 // import { ActorSearch } from './components/ActorSearch';
 import { ActorSearch2 } from './components/ActorSearch2';
 import { ActorGraph } from './components/ActorGraph';
@@ -21,7 +21,12 @@ const gData = {
   }
   
 function App() {
-  const inputEl = useRef(null);
+  const [actors, setActors] = useState([]);
+
+  const handleSearch = () => {
+    const searchTerms = actors.map(actor => actor.name);
+    console.log(searchTerms)
+  }
 
   return (
     <div className="App">
@@ -36,11 +41,12 @@ function App() {
         </ul>
         <form>
           {/* <ActorSearch inputValue={inputEl}/> */}
-          <ActorSearch2 inputValue={inputEl}/>
-          <Button type="submit" variant="contained" color="primary">
+          <ActorSearch2 searchTerm={setActors}/>
+          <Button type="submit" variant="contained" color="primary" onClick={handleSearch}>
             Actorize
           </Button>
         </form>
+        {/* <button onClick={handleSearch}>Focus</button> */}
         <div id='actor-graph' />
         <ActorGraph data={gData} />
       </main>
